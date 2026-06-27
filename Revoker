@@ -85,7 +85,7 @@ entity:SetCallback("OnSpawned", function()
 	cue.Volume = 4
 	cue.PlaybackSpeed = 1
 	cue:Play()
-	
+
 	light(2,Color3.fromRGB(1, 30, 152),Color3.fromRGB(3, 98, 252))
 end)
 
@@ -119,15 +119,16 @@ end)
 
 entity:SetCallback("OnDespawning", function()
 	print("Entity is despawning")
-	wait(0.4)
+	---====== Load achievement giver ======---
+	local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 
-	game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(3, 98, 252)
-	game.Lighting.MainColorCorrection.Contrast = 0.3
-	local tween = game:GetService("TweenService")
-	tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
-	local TweenService = game:GetService("TweenService")
-	local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5),{TintColor = Color3.fromRGB(255,255,255)})
-	TW:Play()
+	---====== Display achievement ======---
+	achievementGiver({
+		Title = "monstah",
+		Desc = "Dex",
+		Reason = "Survive Revoker",
+		Image = "rbxassetid://109328230358562"
+	})
 end)
 
 entity:SetCallback("OnDespawned", function()
