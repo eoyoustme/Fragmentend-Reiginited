@@ -1,0 +1,78 @@
+local function GetRoom()
+	local rooms = workspace.CurrentRooms
+	return rooms:FindFirstChild(game.ReplicatedStorage.GameData.LatestRoom.Value)
+end
+
+for i = 1,5 do
+	game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+	local s = game:GetObjects("rbxassetid://70974040244246")[1]
+	s.Parent = workspace
+
+	local entity = s:FindFirstChildWhichIsA("BasePart")
+	entity.CFrame = GetRoom():WaitForChild("RoomEntrance").CFrame * CFrame.new(0,0,-15)
+
+	-- Tắt Particle
+	local attachment = entity:FindFirstChild("Attachment")
+	if attachment then
+		for _,v in ipairs(attachment:GetDescendants()) do
+			if v:IsA("ParticleEmitter") then
+				v.Enabled = false
+			end
+		end
+	end
+
+	task.wait(1)
+
+	-- Phát Repent
+	local repent = entity:FindFirstChild("Repent")
+	if repent then
+		repent:Play()
+		repent.Ended:Wait()
+	end
+
+	-- Bật lại Particle
+	if attachment then
+		for _,v in ipairs(attachment:GetDescendants()) do
+			if v:IsA("ParticleEmitter") then
+				v.Enabled = true
+			end
+		end
+	end
+
+	-- Phát PlaySound
+	local playSound = entity:FindFirstChild("PlaySound")
+	if playSound then
+		playSound.Volume = 2
+		playSound:Play()
+	end
+
+	local attacking = true
+
+	local roomConnection
+	roomConnection = workspace.CurrentRooms.ChildAdded:Connect(function()
+		attacking = false
+		roomConnection:Disconnect()
+		s:Destroy()
+	end)
+
+	task.spawn(function()
+		while attacking and entity.Parent do
+			task.wait(0.3)
+
+			local player = game.Players.LocalPlayer
+			local char = player.Character
+			local hum = char and char:FindFirstChildOfClass("Humanoid")
+			local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+			if hum and hrp and (hrp.Position - entity.Position).Magnitude <= 25 then
+				hum.Health -= 1.5
+				game.ReplicatedStorage.GameStats["Player_"..player.Name].Total.DeathCause.Value = "Fluster"
+			end
+		end
+	end)
+
+	repeat
+		task.wait()
+	until not attacking
+end
