@@ -3,13 +3,19 @@ local function GetRoom()
 	return rooms:FindFirstChild(game.ReplicatedStorage.GameData.LatestRoom.Value)
 end
 
-for i = 1,5 do
-	game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+-- Chỉ đợi lần đầu
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
+for i = 1,5 do
 	local s = game:GetObjects("rbxassetid://70974040244246")[1]
 	s.Parent = workspace
 
 	local entity = s:FindFirstChildWhichIsA("BasePart")
+	if not entity then
+		s:Destroy()
+		break
+	end
+
 	entity.CFrame = GetRoom():WaitForChild("RoomEntrance").CFrame * CFrame.new(0,0,-15)
 
 	-- Tắt Particle
@@ -22,7 +28,16 @@ for i = 1,5 do
 		end
 	end
 
-	task.wait(1)
+	task.wait(0.5)
+	
+	local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
+	local camara = game.Workspace.CurrentCamera
+	local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
+		camara.CFrame = camara.CFrame * shakeCf
+	end)
+	camShake:Start()
+	camShake:ShakeOnce(10,10,0.5,0.5,2,0.5)
+
 
 	-- Phát Repent
 	local repent = entity:FindFirstChild("Repent")
@@ -31,7 +46,7 @@ for i = 1,5 do
 		repent.Ended:Wait()
 	end
 
-	-- Bật lại Particle
+	-- Bật Particle
 	if attachment then
 		for _,v in ipairs(attachment:GetDescendants()) do
 			if v:IsA("ParticleEmitter") then
@@ -40,10 +55,10 @@ for i = 1,5 do
 		end
 	end
 
-	-- Phát PlaySound
-	local playSound = entity:FindFirstChild("PlaySound")
+	-- Phát Playsound
+	local playSound = entity:FindFirstChild("Playsound")
 	if playSound then
-		playSound.Volume = 2
+		playSound.Volume = 5
 		playSound:Play()
 	end
 
@@ -51,27 +66,41 @@ for i = 1,5 do
 
 	local roomConnection
 	roomConnection = workspace.CurrentRooms.ChildAdded:Connect(function()
+		if not attacking then
+			return
+		end
+
 		attacking = false
-		roomConnection:Disconnect()
-		s:Destroy()
+
+		if roomConnection then
+			roomConnection:Disconnect()
+		end
+
+		if s then
+			s:Destroy()
+		end
 	end)
 
 	task.spawn(function()
 		while attacking and entity.Parent do
-			task.wait(0.3)
+			task.wait(1)
 
 			local player = game.Players.LocalPlayer
 			local char = player.Character
-			local hum = char and char:FindFirstChildOfClass("Humanoid")
-			local hrp = char and char:FindFirstChild("HumanoidRootPart")
 
-			if hum and hrp and (hrp.Position - entity.Position).Magnitude <= 25 then
-				hum.Health -= 1.5
-				game.ReplicatedStorage.GameStats["Player_"..player.Name].Total.DeathCause.Value = "Fluster"
+			if char then
+				local hum = char:FindFirstChildOfClass("Humanoid")
+				local hrp = char:FindFirstChild("HumanoidRootPart")
+
+				if hum and hrp and (hrp.Position - entity.Position).Magnitude <= 50 then
+					hum.Health -= 5
+					game.ReplicatedStorage.GameStats["Player_" .. player.Name].Total.DeathCause.Value = "Fluster"
+				end
 			end
 		end
 	end)
 
+	-- Đợi entity biến mất rồi spawn cái tiếp theo
 	repeat
 		task.wait()
 	until not attacking
