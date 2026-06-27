@@ -43,7 +43,7 @@ local function GetGitSound(GithubSnd, SoundName)
 end
 local Ambience5 = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/FragmentedHotel.mp3?raw=true","FragmentedHotel")
 Ambience5.Parent = workspace
-Ambience5.Volume = 10
+Ambience5.Volume = 6
 Ambience5.Looped = false
 Ambience5.PlaybackSpeed = 1
 Ambience5:Play()
