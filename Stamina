@@ -10,6 +10,8 @@ sprintBarBackground.Size = UDim2.new(0.365, 0,0.041, 0) -- nhỏ hơn
 sprintBarBackground.Position = UDim2.new(0.285, 0,0.916, 0)
 sprintBarBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 sprintBarBackground.BorderSizePixel = 5
+sprintBarBackground.BackgroundTransparency = 0
+sprintBarBackground.Transparency = 0
 sprintBarBackground.Parent = screenGui
 
 -- Bar
@@ -66,8 +68,8 @@ local sprintButton = Instance.new("TextButton")
 sprintButton.Size = UDim2.new(0.083, 0,0.115, 0)
 sprintButton.Position = UDim2.new(0.923, 0, 0.879, 0) -- theo yêu cầu
 sprintButton.Text = ""
-sprintButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- màu xám
-sprintButton.BackgroundTransparency = 1
+sprintButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- màu xám
+sprintButton.BackgroundTransparency = 0
 sprintButton.BorderSizePixel = 5
 sprintButton.BorderColor3 = Color3.fromRGB(0, 0, 0) -- đường viền trắng
 sprintButton.TextColor3 = Color3.fromRGB(255, 255, 255)
