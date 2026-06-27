@@ -16,6 +16,8 @@ Ambience.Looped = true
 Ambience.PlaybackSpeed = 1
 Ambience:Play()
 
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Play A Light in the Darkness of Destruction X0.8 Speed", true)
+
 -- Door Changer Floor 2 And Sound
 coroutine.wrap(function()
 	while true do
@@ -90,7 +92,12 @@ local entityList = {
 	{
 		name = "Daze",
 		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Daze",
-		chance = 15
+		chance = math.random(12.5,15)
+	},
+	{
+		name = "Fluster",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Fluster",
+		chance = math.random(2,3)
 	}
 }
 
