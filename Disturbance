@@ -67,7 +67,7 @@ entity:SetCallback("OnSpawned", function()
 	end)
 	camShake:Start()
 	camShake:ShakeOnce(10,10,2,2,2,2)
-	
+
 	local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
 	Reboundcolor.Name = "Warn"
 	Reboundcolor.TintColor = Color3.fromRGB(255, 0, 0) Reboundcolor.Saturation = -0.7 Reboundcolor.Contrast = 0.2
@@ -78,6 +78,8 @@ entity:SetCallback("OnSpawned", function()
 	sound.PlaybackSpeed = 0.6
 	sound.Parent = workspace
 	sound:Play()
+	local distur = game.Workspace.Disturbance.RushNew.PlaySound
+	distur.Volume = 5
 end)
 
 entity:SetCallback("OnStartMoving", function()
