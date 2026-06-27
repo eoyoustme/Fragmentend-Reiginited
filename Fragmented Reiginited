@@ -1,0 +1,153 @@
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Mode make by thanhphok (Og Hunger(new)", true)
+
+local function GetGitSound(GithubSnd, SoundName)
+	local url = GithubSnd
+	if not isfile(SoundName .. ".mp3") then
+		writefile(SoundName .. ".mp3", game:HttpGet(url))
+	end
+	local sound = Instance.new("Sound")
+	sound.SoundId = (getcustomasset or getsynasset)(SoundName .. ".mp3")
+	return sound
+end
+local Ambience = GetGitSound("https://github.com/eoyoustme/Extremely/blob/main/Ambience.mp3?raw=true","Ambience")
+Ambience.Parent = workspace
+Ambience.Volume = 2
+Ambience.Looped = true
+Ambience.PlaybackSpeed = 1
+Ambience:Play()
+
+-- Door Changer Floor 2 And Sound
+coroutine.wrap(function()
+	while true do
+		wait(0.0005)
+		workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.SoundId = "rbxassetid://833871080"
+		workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("Door"):FindFirstChild("Door").Material = "Rock"
+		workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:FindFirstChild("Door"):FindFirstChild("Door"):FindFirstChild("Sign").Material = "Rock"
+	end
+end)()
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+
+Ambience:Destroy()
+
+local function GetGitSound(GithubSnd, SoundName)
+	local url = GithubSnd
+	if not isfile(SoundName .. ".mp3") then
+		writefile(SoundName .. ".mp3", game:HttpGet(url))
+	end
+	local sound = Instance.new("Sound")
+	sound.SoundId = (getcustomasset or getsynasset)(SoundName .. ".mp3")
+	return sound
+end
+local Ambience5 = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/FragmentedHotel.mp3?raw=true","FragmentedHotel")
+Ambience5.Parent = workspace
+Ambience5.Volume = 3
+Ambience5.Looped = true
+Ambience5.PlaybackSpeed = 1
+Ambience5:Play()
+
+local Lighting = game:GetService("Lighting")
+Lighting.Ambient = Color3.new(0, 0, 0)
+Lighting.Brightness = 0.1
+Lighting.FogEnd = 60
+Lighting.FogStart = 45
+Lighting.FogColor = Color3.new(0.0745098, 0.0745098, 0.223529)
+
+local cue2 = Instance.new("Sound")
+cue2.Parent = game.Workspace
+cue2.Name = "Spawn"
+cue2.SoundId = "rbxassetid://9113731836"
+cue2.Volume = 3
+cue2.PlaybackSpeed = 1
+cue2.Looped = true
+cue2:Play()
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Fragmentend Reginited mode has Activated (alpha)", true)
+wait(2)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("credit to Nhankgnew And Me:D", true)
+
+pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Stamina"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Intro"))()
+end)
+
+local entityList = {
+	{
+		name = "Disturbance",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Disturbance",
+		chance = math.random(5,8)
+	},
+	{
+		name = "Revoker",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Revoker",
+		chance = math.random(7.5, 9)
+	},
+	{
+		name = "Hungered",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Hungered",
+		chance = math.random(1,1.5)
+	},
+	{
+		name = "Daze",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Daze",
+		chance = 15
+	}
+}
+
+local function rollChance(percent)
+	return math.random(1, 100) <= percent
+end
+
+local function spawnEntity(entityData)
+	pcall(function()
+		loadstring(game:HttpGet(entityData.url))()
+	end)
+end
+
+local function IsSeekActive()
+	local currentRooms = game.Workspace:FindFirstChild("CurrentRooms")
+	if not currentRooms then
+		return false
+	end
+
+	local namesToCheck = {
+		"Seek",
+		"SeekMoving",
+		"SeekMovingNewClone",
+		"SeekEntity",
+		"SeekDoor"
+	}
+
+	for _, name in ipairs(namesToCheck) do
+		if game.Workspace:FindFirstChild(name, true) then
+			return true
+		end
+		if currentRooms:FindFirstChild(name, true) then
+			return true
+		end
+	end
+
+	-- Dò thêm theo tên chứa "seek"
+	for _, inst in ipairs(game.Workspace:GetDescendants()) do
+		local n = string.lower(inst.Name)
+		if string.find(n, "seek") then
+			return true
+		end
+	end
+
+	return false
+end
+
+math.randomseed(os.clock() * 1e6)
+
+while true do
+	task.wait(5)
+
+	if not IsSeekActive() then
+		for _, entityData in ipairs(entityList) do
+			if rollChance(entityData.chance) then
+				spawnEntity(entityData)
+			end
+		end
+	end
+end
