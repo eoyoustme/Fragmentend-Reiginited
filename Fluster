@@ -7,6 +7,7 @@ end
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 for i = 1,5 do
+	local camera = workspace.CurrentCamera
 	local s = game:GetObjects("rbxassetid://70974040244246")[1]
 	s.Parent = workspace
 
@@ -15,6 +16,10 @@ for i = 1,5 do
 		s:Destroy()
 		break
 	end
+	
+	local startFov = camera.FieldOfView
+	local zoomFov = 90
+	local zoomDuration = 0.5
 
 	entity.CFrame = GetRoom():WaitForChild("RoomEntrance").CFrame * CFrame.new(0,0,-15)
 
@@ -28,7 +33,10 @@ for i = 1,5 do
 		end
 	end
 
-	task.wait(0.5)
+	wait(0.5)
+	
+	camera.CameraType = Enum.CameraType.Custom
+	camera.FieldOfView = startFov
 	
 	local CameraShaker = require(game.ReplicatedStorage.CameraShaker)
 	local camara = game.Workspace.CurrentCamera
@@ -60,6 +68,21 @@ for i = 1,5 do
 	if playSound then
 		playSound.Volume = 5
 		playSound:Play()
+		
+		local distro = playSound:FindFirstChildWhichIsA("DistortionSoundEffect")
+		if distro then
+			distro.Level = 0.99
+		end
+		
+		local Sceam = entity:FindFirstChild("Scream")
+		if Sceam then
+			Sceam.Volume = 5
+
+			local distro = playSound:FindFirstChildWhichIsA("DistortionSoundEffect")
+			if distro then
+				distro.Level = 0.99
+			end
+			end
 	end
 
 	local attacking = true
