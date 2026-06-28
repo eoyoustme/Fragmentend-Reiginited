@@ -28,6 +28,42 @@ coroutine.wrap(function()
 	end
 end)()
 
+coroutine.wrap(function()
+	while true do
+		task.wait(0.05)
+
+		local room = workspace.CurrentRooms:FindFirstChild(game.ReplicatedStorage.GameData.LatestRoom.Value)
+		if room then
+			for _, obj in ipairs(room:GetDescendants()) do
+				if obj.Name == "DoorNormal" then
+					local door = obj:FindFirstChild("Door")
+					if door then
+						local open = door:FindFirstChild("Open")
+						if open and open:IsA("Sound") then
+							open.SoundId = "rbxassetid://833871080"
+						end
+					end
+				end
+			end
+		end
+	end
+end)()
+
+local function EditPart(obj)
+	if obj:IsA("Part") or obj:IsA("MeshPart") then
+		obj.Color = Color3.fromRGB(130, 130, 130)
+		obj.Material = Enum.Material.Rock
+	end
+end
+
+-- Sửa tất cả Part hiện có
+for _, obj in ipairs(workspace:GetDescendants()) do
+	EditPart(obj)
+end
+
+-- Tự động sửa Part mới được thêm
+workspace.DescendantAdded:Connect(EditPart)
+
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
 game.SoundService.AmbientReverb = Enum.ReverbType.Arena
