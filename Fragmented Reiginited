@@ -30,6 +30,8 @@ end)()
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
 
+game.SoundService.AmbientReverb = Enum.ReverbType.Arena
+
 Ambience:Destroy()
 
 local function GetGitSound(GithubSnd, SoundName)
