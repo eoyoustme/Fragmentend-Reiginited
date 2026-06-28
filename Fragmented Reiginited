@@ -51,7 +51,7 @@ end)()
 
 local function EditPart(obj)
 	if obj:IsA("Part") or obj:IsA("MeshPart") then
-		obj.Color = Color3.fromRGB(130, 130, 130)
+		obj.Color = Color3.fromRGB(70, 70, 70)
 		obj.Material = Enum.Material.Rock
 	end
 end
@@ -141,6 +141,11 @@ local entityList = {
 		name = "Dread",
 		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Dread",
 		chance = math.random(20,40)
+	},
+	{
+		name = "Rebound",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Rebound",
+		chance = math.random(2,3.75)
 	}
 }
 
