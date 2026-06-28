@@ -98,6 +98,11 @@ local entityList = {
 		name = "Fluster",
 		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Fluster",
 		chance = math.random(2,3)
+	},
+	{
+		name = "Dread",
+		url = "https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Dread",
+		chance = math.random(20,40)
 	}
 }
 
