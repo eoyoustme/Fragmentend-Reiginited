@@ -21,7 +21,7 @@ for i = 1,5 do
 	local zoomFov = 90
 	local zoomDuration = 0.5
 
-	entity.CFrame = GetRoom():WaitForChild("RoomEntrance").CFrame * CFrame.new(0,0,-15)
+	entity.CFrame = GetRoom():WaitForChild("RoomEntrance").CFrame * CFrame.new(0,0,-40)
 
 	-- Tắt Particle
 	local attachment = entity:FindFirstChild("Attachment")
