@@ -1,4 +1,4 @@
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Mode make by thanhphok (Og Hunger(new)", true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Hi There Welcome to my mod!!!!!!", true)
 
 local function GetGitSound(GithubSnd, SoundName)
 	local url = GithubSnd
@@ -66,7 +66,7 @@ cue2:Play()
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Fragmentend Reginited mode has Activated (alpha)", true)
 wait(2)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("credit to Nhankgnew And Me:D", true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Credit to The Jabiss (orgin Fragmented) And Nhankg And OG Hunger (new) me:D", true)
 
 pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Stamina"))()
