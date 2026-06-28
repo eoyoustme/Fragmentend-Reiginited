@@ -194,8 +194,6 @@ entity:SetCallback("OnSpawned", function()
 	wait(1)
 	vroom:Play()
 	move:Play()
-	game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Rebound2"))()
 end)
 
 entity:SetCallback("OnStartMoving", function()
@@ -257,3 +255,6 @@ end)
 ---====== Run entity ======---
 
 entity:Run(true)
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Rebound1"))()
