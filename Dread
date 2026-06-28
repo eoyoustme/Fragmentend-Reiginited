@@ -1,6 +1,6 @@
 -- ====== DREAD ONE-TIME SPAWN LOCK ======
 if _G.DreadClockSpawned then
-	return
+    return
 end
 _G.DreadClockSpawned = true
 
@@ -87,9 +87,14 @@ end
 local DreadSound = Instance.new("Sound")
 DreadSound.SoundId = GitAud("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/ClockSound.mp3?raw=true", "DreadClock")
 DreadSound.Volume = 7
+DreadSound.PlaybackSpeed = 0.85
 DreadSound.Looped = true
 DreadSound.Parent = workspace
 DreadSound:Play()
+
+local pitch = Instance.new("PitchShiftSoundEffect")
+pitch.Octave = 0.85
+pitch.Parent = DreadSound
 
 local distort2 = Instance.new("DistortionSoundEffect")
 distort2.Parent = DreadSound
@@ -100,7 +105,7 @@ local humanoid = player.Character and player.Character:FindFirstChildOfClass("Hu
 if humanoid then
 	local originalSpeed = humanoid.WalkSpeed -- tốc độ hiện tại khi DreadClock xuất hiện
 	local targetSpeed = 7 -- tốc độ tối thiểu muốn giảm xuống
-	local totalDuration = 38.25
+	local totalDuration = 41
 	local slowInterval = 0.5
 	local step = (originalSpeed - targetSpeed) * (slowInterval / 0.2) -- giảm mượt mỗi 0.1s
 
