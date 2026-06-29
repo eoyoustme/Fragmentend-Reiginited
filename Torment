@@ -77,8 +77,8 @@ entity:SetCallback("OnSpawned", function()
 
 	local move = GetGitSound("https://github.com/eoyoustme/ohh/blob/main/TormentNew%20(1)%20(1).mp3?raw=true","Reboun")
 	move.Parent = bruh
-	move.Name = "Move"
-	move.Volume = 0
+	move.Name = "am"
+	move.Volume = 6
 	move.Looped = true
 	move.RollOffMaxDistance = 500
 	move.RollOffMinDistance = 300
