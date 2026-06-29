@@ -106,6 +106,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Stamina"))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/ohh/refs/heads/main/Intro"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Insanity"))()
 end)
 
 local entityList = {
