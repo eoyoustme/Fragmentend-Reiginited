@@ -70,7 +70,7 @@ local entity = Spawner:Create({
 
 entity:SetCallback("OnSpawned", function()
 	print("Entity has spawned")
-	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R͈̳̙̈́̐̍͌̋ͦ͝Ư̷̧̨̛͓͉̹̰̰̜̞̪͓ͤ̐̈́ͭͨ͐̉̅̍̽ͣ̈̔̊͆̓͊̕͢͠͝͠͝ͅͅṆ̝̻͚͇̰̦̾̇̐̓ͣ̇ͦ͌̾͘͟ F̪̭͂̀ͦO̶̸̴̢̝͚̪̘̬̣̩͌̽̊͑̽ͫͨͣͤ̎̕̚͜͟͜͡ͅR̴̨̢̧̧̞͚͙͇͚̠̰͔͍̬͉͗ͤ͗̓͐̋͒͆ͧ̎͒̋͆͢͠ͅ Y̶̖̮͓̦͈̬͒ͩ̀̈ͨ̓͌ͪͦ̾_̩̪͍̰̞̙̗̹̃ͨ̽̋̐͆ͫ̋̏̃ͪͭͪ̒ͭ͟Ŏ̸̪̞̞̜̻̈́̌̅͗͊ͭ͡Ư̴̷͈̰̫̖͎ͧͤͧͦͤ̌͐̈́̈̐̑͠_̛̗̩̖͔ͦ͊_̭͙̟̽̍ͧ̾͊̌̃̾͢R̶̵̷̷̼̘̱̺̩͚͉̱̮̺̟̲͓̍̄ͧͫ͗͋̒ͤ̉̑̌ͭ̃̇̂̔́̃̚͠ L̶̴̡̛̰̪̯͈̻͍̗̙̙̙̭̎ͨ̊̃̇̒͑͗̓̈̓ͯͥ͘͘͟I̳̻͎͉͖̒̒͝F̸̴̧̻̹̣̠̣͉̳̳͓̼͙̙̙̰̏͂̅̈́̏̔̌̉́̊ͧ̅̇̂̎̀ͣ̄̉̕̕͜͜͝E̓_̵̸̡̡̬̫͉͙̯͓̫͓̣̩̻͕̲͛̀̓̓͒̅̏͛́̆ͥ̈͆̅͌̔", true)
+	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R̵̵̷̢̞̠̥̮̲̤͍͐̀̈́̈́̃̀͠Ų͉̯̟̬ͬ͒̃̍N Ḟ̶̛͙̩͈̫͙̩̮͓̮̥̜̍͌̊́͐̕͟͠O̵̶̡̞͔̣̩̥͇͂͗͑͐̂͠ͅR Ŷ̴̛̼̜̖̯̯̳̳͚ͬ̂̓͒́ͩͫ̓ͤͥ͘͟O̸̹̖͕̠̭ͣ͌͗͐́̇̊̉̓͘͟͝Ṵ̷_͚̺̬̊͗̔Ŗ̡͕̗͕̜͓̍̋̽ͭ͐̄̎̿͟͢ LÎ̷̷̷̡̪̩̹̻̤̯̟̼̞̗̀͗͗͘F̷̶͇̭͈̀̑̃ͭ̓E̶̢̢̡̮̯̖̺̾̽ͯ̓ͣͥ̆͊͛̄ͥͥ͘͢͡, true)
 	local bruh = workspace.Torment.Main
 
 	local move = GetGitSound("https://github.com/eoyoustme/ohh/blob/main/TormentNew%20(1)%20(1).mp3?raw=true","TormentNew")
