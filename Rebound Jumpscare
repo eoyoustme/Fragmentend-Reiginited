@@ -140,7 +140,7 @@ task.spawn(function()
 			end
 		end)
 
-		task.delay(math.random(3000, 3000) / 60000, function()
+		task.delay(math.random(300, 600) / 6000, function()
 			if oldSound and oldSound.Parent and oldActive then
 				playSoundSafe(oldSound, 0.25 + math.random() / 10, math.random(55, 145) / 100, 1)
 			end
