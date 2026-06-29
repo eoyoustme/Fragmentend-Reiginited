@@ -27,7 +27,7 @@ local entity = Spawner:Create({
 		Values = {1.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 10000000,
+		Speed = 10000000100000,
 		Delay = 4,
 		Reversed = false
 	},
@@ -40,7 +40,7 @@ local entity = Spawner:Create({
 	},
 	Damage = {
 		Enabled = true,
-		Range = 40,
+		Range = 100,
 		Amount = 125
 	},
 	Crucifixion = {
