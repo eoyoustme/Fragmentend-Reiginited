@@ -12,20 +12,20 @@ end
 
 ---====== Load spawner ======---
 
-local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/DOORS-Entity-Spawner-V2/main/init.luau"))()
 
 ---====== Create entity ======---
 
-local entity = spawner.Create({
+local entity = Spawner:Create({
 	Entity = {
 		Name = "Torment",
-		Asset = "https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.rbxm?raw=true",
+		Asset = "https://github.com/RegularVynixu/DOORS-Entity-Spawner-V2/raw/main/Assets/Entities/Rush.rbxm",
 		HeightOffset = 0
 	},
 	Lights = {
 		Flicker = {
 			Enabled = true,
-			Duration = 10
+			Duration = 5
 		},
 		Shatter = true,
 		Repair = false
@@ -40,7 +40,7 @@ local entity = spawner.Create({
 	},
 	Movement = {
 		Speed = 30,
-		Delay = 10,
+		Delay = 0,
 		Reversed = false
 	},
 	Rebounding = {
@@ -63,7 +63,7 @@ local entity = spawner.Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"You die to Torment", "IF you hear a sound static....", "He is chase you run from that rooms now", "you can't run from he"},
+		Hints = {"Death", "Hints", "Go", "Here"},
 		Cause = ""
 	}
 })
@@ -114,8 +114,9 @@ entity:SetCallback("OnStartMoving", function()
 			end
 		end
 	end)
-	
-entity:SetCallback("OnEnterRoom", function(room, firstTime)
+end)
+
+entity:SetCallback("OnEnterRoom", function(room: Model, firstTime: boolean)
 	if firstTime == true then
 		print("Entity has entered room: ".. room.Name.. " for the first time")
 	else
@@ -123,7 +124,7 @@ entity:SetCallback("OnEnterRoom", function(room, firstTime)
 	end
 end)
 
-entity:SetCallback("OnLookAt", function(lineOfSight)
+entity:SetCallback("OnLookAt", function(lineOfSight: boolean)
 	if lineOfSight == true then
 		print("Player is looking at entity")
 	else
@@ -131,7 +132,7 @@ entity:SetCallback("OnLookAt", function(lineOfSight)
 	end
 end)
 
-entity:SetCallback("OnRebounding", function(startOfRebound)
+entity:SetCallback("OnRebounding", function(startOfRebound: boolean)
 	if startOfRebound == true then
 		print("Entity has started rebounding")
 	else
@@ -147,14 +148,14 @@ entity:SetCallback("OnDespawned", function()
 	print("Entity has despawned")
 end)
 
-entity:SetCallback("OnDamagePlayer", function(newHealth)
+entity:SetCallback("OnDamagePlayer", function(newHealth: number)
 	local player = game.Players.LocalPlayer
 	local playerGui = player:WaitForChild("PlayerGui")
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid")
 	local camera = workspace.CurrentCamera
-
-	if newHealth == 0 then
+	if newHealth <= 0 then
+		print("Entity has killed the player")
 		local screenGui = Instance.new("ScreenGui")
 		screenGui.Parent = playerGui
 		screenGui.Name = "ScreenGui"
@@ -293,6 +294,7 @@ entity:SetCallback("OnDamagePlayer", function(newHealth)
 		task.wait(0.7)
 		camera.CameraType = Enum.CameraType.Custom
 		camera.FieldOfView = startFov
+		
 	else
 		print("Entity has damaged the player")
 	end
@@ -311,4 +313,4 @@ end)
 
 ---====== Run entity ======---
 
-entity:Run()
+entity:Run(true)
