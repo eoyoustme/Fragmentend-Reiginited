@@ -4,7 +4,7 @@ local function showInsaltyText()
 	intro.Parent = game.Players.LocalPlayer.PlayerGui.MainUI
 	intro.Name = "Fragment Mode Intro"
 	intro.Visible = true
-	intro.Text = "The Insanity Hotel"
+	intro.Text = "𝕋𝕙𝕖 𝕀𝕟𝕤𝕒𝕟𝕚𝕥𝕪 ℍ𝕠𝕥𝕖𝕝"
 	intro.TextTransparency = 0
 	local underline = UDim2.new(1.1, 0, 0.015, 6)
 	game.TweenService:Create(intro.Underline, TweenInfo.new(3), {Size = underline}):Play()
