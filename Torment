@@ -19,7 +19,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 local entity = Spawner:Create({
 	Entity = {
 		Name = "Torment",
-		Asset = "https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.rbxm?raw=true",
+		Asset = "https://github.com/RegularVynixu/DOORS-Entity-Spawner-V2/raw/main/Assets/Entities/Rush.rbxm",
 		HeightOffset = 0
 	},
 	Lights = {
@@ -100,7 +100,7 @@ entity:SetCallback("OnStartMoving", function()
 
 			if hum and hrp and entity then
 				if (hrp.Position - entity.Position).Magnitude <= 40 then
-					if char:GetAttribute("Hiding") and hum.Health > 0 then
+					if hum.Health > 0 then
 						hum.Health = 0
 
 						local stats = game:GetService("ReplicatedStorage").GameStats:FindFirstChild("Player_" .. player.Name)
