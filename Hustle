@@ -27,7 +27,7 @@ local entity = Spawner:Create({
 		Values = {1.5, 20, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 1000,
+		Speed = 100000,
 		Delay = 4,
 		Reversed = false
 	},
@@ -67,13 +67,16 @@ entity:SetCallback("OnSpawned", function()
 	local TweenService = game:GetService("TweenService")
 	local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(4),{TintColor = Color3.fromRGB(255, 255, 255)})
 	TW:Play()
-	
+
 	local sound = Instance.new("Sound")
 	sound.SoundId = "rbxassetid://99570778660066"
 	sound.Parent = workspace
 	sound.Volume = 6
 	sound:Play()
-
+	
+	local nice = workspace:FindFirstChild("Hustle")
+	local Spawnno = nice:FindFirstChild("Spawn")
+	Spawnno:Destroy()
 end)
 
 entity:SetCallback("OnStartMoving", function()
