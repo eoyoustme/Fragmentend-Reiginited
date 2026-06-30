@@ -6,7 +6,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 
 local entity = Spawner:Create({
 	Entity = {
-		Name = "Struggle",
+		Name = "Disturbance",
 		Asset = "https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Disturbance.rbxm?raw=true",
 		HeightOffset = 0.5
 	},
@@ -27,9 +27,9 @@ local entity = Spawner:Create({
 		Values = {4.5, 60, 0.1, 1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 130,
+		Speed = 160,
 		Delay = 11.2,
-		Reversed = true
+		Reversed = false
 	},
 	Rebounding = {
 		Enabled = false,
@@ -67,6 +67,10 @@ entity:SetCallback("OnSpawned", function()
 	end)
 	camShake:Start()
 	camShake:ShakeOnce(10,10,2,2,2,2)
+	
+	local entiy = game.Workspace.Disturbance.RushNew
+	local point = entiy.Attachment.PointLight
+	point.Color = Color3.fromRGB(255, 0, 255)
 
 	local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
 	Reboundcolor.Name = "Warn"
@@ -78,7 +82,7 @@ entity:SetCallback("OnSpawned", function()
 	sound.PlaybackSpeed = 0.6
 	sound.Parent = workspace
 	sound:Play()
-	local distur = game.Workspace.Struggle.RushNew.PlaySound
+	local distur = game.Workspace.Disturbance.RushNew.PlaySound
 	distur.Volume = 5
 end)
 
@@ -135,9 +139,9 @@ entity:SetCallback("OnDespawning", function()
 
 	---====== Display achievement ======---
 	achievementGiver({
-		Title = "Legend FIGHT",
-		Desc = "I See You",
-		Reason = "Encounter Struggle",
+		Title = "A Memorable Fight",
+		Desc = "FOUND YOU",
+		Reason = "Encounter Disturbance",
 		Image = "rbxassetid://70559430718292"
 	})
 end)
