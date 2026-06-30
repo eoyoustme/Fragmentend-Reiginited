@@ -8,7 +8,7 @@ local entity = Spawner:Create({
 	Entity = {
 		Name = "Torment",
 		Asset = "https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.rbxm?raw=true",
-		HeightOffset = 0
+		HeightOffset = 0.8
 	},
 	Lights = {
 		Flicker = {
@@ -60,7 +60,7 @@ local entity = Spawner:Create({
 
 entity:SetCallback("OnSpawned", function()
 	print("Entity has spawned")
-	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R̆U̘̝̟̬̓̀͗ͪ̿́̉̅ͨ̈̌͑̃͒͌̀͢͞_̨͚̻̫̥̽̈́̄ͩ̓N̸̷̡̨̥̗̝̱̥͙̞̥̥͔̹͎͕̰͓ͫ̏ͨͥ̾̎ͮ͋̏̃̃̅̀̆͐͛͘̚ F̵̧̣̜̟͎̰̘̪͓̠̘̠̹͓̠͙̍ͮ̇ͪ͐́ͨͯ̓ͯ̌̓̄ͩ͊͟ͅO̺̜̓Ŗ̵̷̤͕̲͙̺̹̼̩͉̟̣͎̆͗͆͗̅̃͌͑ͬ̂ Y̸̧̡̖̻̳̫̲̤͍̝̯̠̱̭̰̻̱̌́̐ͤ̇̃ͣͬ̂̅̊͝O͓̺̦͊U̪̕R̰̺͖̫͎̮̭͙͐͗ͭͪ́ͣͨͥ̅͝ L̶̸̰͎̣̭̱̪̺ͦ̄̄ͪͣ̀̿ͯ͝_̙͔͆ͭ̾͜͞ͅI̷͈ͧ́_̧̪̳͉̻̃F͓̯̮̖̞͕̉͌̓͋ͦ́̈́ͯ͟͝ͅ_̶̡͎̥͕̙̼̲̤̔͌͂̍ͨ̃ͯ͑Ě̢͓̗͇̟̤ͧ̒̀̊ͪͥͮͭͭͮ͢_̛͓̺̩̍̔̀̚͜", true)
+	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Guiding Light : RUN NOW", true)
 	local function GetGitSound(GithubSnd, SoundName)
 		local url = GithubSnd
 		if not isfile(SoundName .. ".mp3") then
@@ -76,6 +76,11 @@ entity:SetCallback("OnSpawned", function()
 	Jumpscare.Name = "am"
 	Jumpscare.PlaybackSpeed = 1
 	Jumpscare:Play()
+	
+	wait(1)
+	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Torment : W̴̶̧̛̪̟̮͙̺̺̪̝̖͓͖̖̱̗̗̊̌̀ͭ̆̓̿̑̽͡͞H̳̥͕ͣ͂_̨͈͍̜̯̘͔͚̺ͦͮ̆̊͒ͩ̒̀̑̾̾͊ͧ̒̋̀̚͟Y̵̢͍͇͚̍ͨ YO̗̻̺͕͕̩̤̝͐ͬ͛ͭ̌̋͊̀̀̓̍ͯ͢͜ͅU̵̶̷̶̵̮̹̠̙̜͓̤͇͔͕̺̐ͭͯ͊ͩ͊̇͆ͥ̎̕̚͟͟ Ŗ̵̢̣̭̫̆̈́͐ͯ̅̉ͦ͊͘̚̕U̱̩͖̰̥̲̳̪̳̬͇ͬ͊ͣ͐̄͝N͔̯̥̚ F̷̧̣̳̞̩̰̻̟͇̭̰̙̺̙̜͚̙͐ͨͭͩ̏͑̕̚͜͟͡͡͠ͅṞ̫̝̲͍ͨ́̿͌͛́͘_̗̳͎̲͈͈̘̠̹̪̝͒ͣ́͗̋̾̈̄ͯ̓͜Ȍ̶̵̪̭̲͉̒̉̓̄͂ͥ͛̀͊͘͘͢͠M̶̨̨̛̫̤̩̞͔̃ͪ̓̌́͆̂͒̈ͧ̕͝͝ M͕̰̙̟̅̅̊͊͆ͥ͊̈͟E̗͚̣͂_̴̛̠̪̦̗̖̹͙̭̗̏̍̀̅̌̑̇ͣͧ̓̕?͕̝", true)
+wait(3)
+	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Torment : C̕A̵̵̡̞̫̭͕͒̅̔̑̚͢M̸̴̧̖̱̻͕̹̘͇ͤͩͧ͋̄ͤ̓̆̀͋̿̕͢͠ͅE̷͕̜̼̭̭̰̱̦̦̯̅̈̀ͨ͊ͮͦͨ̌̆͘̚ H͖E̶̤̗͈̭̝͎̱̟̞̭̼̺̽̾ͪͬ̓̍ͦ̇ͩ͆̋̌̐͛̕͟͢ͅR̛̝̖̟͓̞̤̥̙͓͓̱ͭ̿͗ͯ̍͑ͧ̒͋̓ͯ̒ͭͅͅÉ̶̦͖̤͖͔̳̖ͭ̽́̑ͦ̕͞ À̸̻̤͖̱̗̬̃N̺̞͔̯̄͐̈D̶̶̷̨̰̖͔̺̩͙̠̻͎̦̿̾͑̓̂̈̍̀ͦ̾͛ͤ̅͊̾ͪ̕͟͜͡ Ļ̸̵̶̶̛͓̬̙̣̗̹͓̞͉̐̓̈́ͨ̌̀ͬͭ̄̀́̂͒͘͢͠ͅÊ͓̮̬̙͕̯̖̳̟͊̈́̍̃ͪͬ͢͟͡T̞_̛͎̹̥̜̬̘͑ͭ̓̅͘͠ M̤͙̖ͣ_̧̘͇̩͔̞̓ͪ̎͂ͤͪ̔ͭ̀͜͜͞͞Ě̸̸̸̴̶͉͔̮̼̦̺͙ͥ̋̆ Sͤ̒ͅË̵̠͕̳̟̩͕̻̰̗́̂̀̊ͧ́ͩ͢͢͢͢ͅE̵̴͇̞̦̫͎̬̱̣̳͕̓͗ͨ͒ͩ̐̐͗̊ Y͔͕̮̘͕͇̪̼̜̠̤̪͉ͣ̃̿̀̾́̈́ͩ̓O̸̵̡̯̗͙̰̻̰ͦ̈́͐̄̑ͬ͢U͒̂̋.̸̢̨̗̗͎̥͕̳̤̼̫̈͑̍̂̉̈ͤͦ̅ͥ͊̚͢͜.̰͚̲̃̍̀ͣͮ͘͡_̡̛̬͍͇̔ͯ̽̇ͪ̓̀̈́̅͐͢͢ͅ", true)
 end)
 
 entity:SetCallback("OnStartMoving", function()
