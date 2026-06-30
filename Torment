@@ -72,16 +72,14 @@ entity:SetCallback("OnSpawned", function()
 	end
 	local Jumpscare = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.mp3?raw=true","Torment")
 	Jumpscare.Parent = workspace
-	Jumpscare.Volume = 7
+	Jumpscare.Volume = 3.5
 	Jumpscare.Name = "am"
 	Jumpscare.PlaybackSpeed = 1
 	Jumpscare:Play()
 	
-	wait(1)
+	wait(3)
 	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Torment : W̴̶̧̛̪̟̮͙̺̺̪̝̖͓͖̖̱̗̗̊̌̀ͭ̆̓̿̑̽͡͞H̳̥͕ͣ͂_̨͈͍̜̯̘͔͚̺ͦͮ̆̊͒ͩ̒̀̑̾̾͊ͧ̒̋̀̚͟Y̵̢͍͇͚̍ͨ YO̗̻̺͕͕̩̤̝͐ͬ͛ͭ̌̋͊̀̀̓̍ͯ͢͜ͅU̵̶̷̶̵̮̹̠̙̜͓̤͇͔͕̺̐ͭͯ͊ͩ͊̇͆ͥ̎̕̚͟͟ Ŗ̵̢̣̭̫̆̈́͐ͯ̅̉ͦ͊͘̚̕U̱̩͖̰̥̲̳̪̳̬͇ͬ͊ͣ͐̄͝N͔̯̥̚ F̷̧̣̳̞̩̰̻̟͇̭̰̙̺̙̜͚̙͐ͨͭͩ̏͑̕̚͜͟͡͡͠ͅṞ̫̝̲͍ͨ́̿͌͛́͘_̗̳͎̲͈͈̘̠̹̪̝͒ͣ́͗̋̾̈̄ͯ̓͜Ȍ̶̵̪̭̲͉̒̉̓̄͂ͥ͛̀͊͘͘͢͠M̶̨̨̛̫̤̩̞͔̃ͪ̓̌́͆̂͒̈ͧ̕͝͝ M͕̰̙̟̅̅̊͊͆ͥ͊̈͟E̗͚̣͂_̴̛̠̪̦̗̖̹͙̭̗̏̍̀̅̌̑̇ͣͧ̓̕?͕̝", true)
-
 wait(3)
-
 	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Torment : C̕A̵̵̡̞̫̭͕͒̅̔̑̚͢M̸̴̧̖̱̻͕̹̘͇ͤͩͧ͋̄ͤ̓̆̀͋̿̕͢͠ͅE̷͕̜̼̭̭̰̱̦̦̯̅̈̀ͨ͊ͮͦͨ̌̆͘̚ H͖E̶̤̗͈̭̝͎̱̟̞̭̼̺̽̾ͪͬ̓̍ͦ̇ͩ͆̋̌̐͛̕͟͢ͅR̛̝̖̟͓̞̤̥̙͓͓̱ͭ̿͗ͯ̍͑ͧ̒͋̓ͯ̒ͭͅͅÉ̶̦͖̤͖͔̳̖ͭ̽́̑ͦ̕͞ À̸̻̤͖̱̗̬̃N̺̞͔̯̄͐̈D̶̶̷̨̰̖͔̺̩͙̠̻͎̦̿̾͑̓̂̈̍̀ͦ̾͛ͤ̅͊̾ͪ̕͟͜͡ Ļ̸̵̶̶̛͓̬̙̣̗̹͓̞͉̐̓̈́ͨ̌̀ͬͭ̄̀́̂͒͘͢͠ͅÊ͓̮̬̙͕̯̖̳̟͊̈́̍̃ͪͬ͢͟͡T̞_̛͎̹̥̜̬̘͑ͭ̓̅͘͠ M̤͙̖ͣ_̧̘͇̩͔̞̓ͪ̎͂ͤͪ̔ͭ̀͜͜͞͞Ě̸̸̸̴̶͉͔̮̼̦̺͙ͥ̋̆ Sͤ̒ͅË̵̠͕̳̟̩͕̻̰̗́̂̀̊ͧ́ͩ͢͢͢͢ͅE̵̴͇̞̦̫͎̬̱̣̳͕̓͗ͨ͒ͩ̐̐͗̊ Y͔͕̮̘͕͇̪̼̜̠̤̪͉ͣ̃̿̀̾́̈́ͩ̓O̸̵̡̯̗͙̰̻̰ͦ̈́͐̄̑ͬ͢U͒̂̋.̸̢̨̗̗͎̥͕̳̤̼̫̈͑̍̂̉̈ͤͦ̅ͥ͊̚͢͜.̰͚̲̃̍̀ͣͮ͘͡_̡̛̬͍͇̔ͯ̽̇ͪ̓̀̈́̅͐͢͢ͅ", true)
 end)
 
@@ -286,8 +284,21 @@ end)
 
 entity:SetCallback("OnDespawning", function()
 	print("Entity is despawning")
+	local model = game.Workspace.Torment.Main
+	model:Destroy()
 	local voice = game.Workspace.am
 	voice:Destroy()
+	
+	---====== Load achievement giver ======---
+	local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+
+	---====== Display achievement ======---
+	achievementGiver({
+		Title = "SUFFERING",
+		Desc = "Im coming..",
+		Reason = "Survive Torment",
+		Image = "rbxassetid://101914212937"
+	})
 end)
 
 entity:SetCallback("OnDespawned", function()
