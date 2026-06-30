@@ -73,7 +73,7 @@ entity:SetCallback("OnSpawned", function()
 	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R̵̵̷̢̞̠̥̮̲̤͍͐̀̈́̈́̃̀͠Ų͉̯̟̬ͬ͒̃̍N Ḟ̶̛͙̩͈̫͙̩̮͓̮̥̜̍͌̊́͐̕͟͠O̵̶̡̞͔̣̩̥͇͂͗͑͐̂͠ͅR Ŷ̴̛̼̜̖̯̯̳̳͚ͬ̂̓͒́ͩͫ̓ͤͥ͘͟O̸̹̖͕̠̭ͣ͌͗͐́̇̊̉̓͘͟͝Ṵ̷_͚̺̬̊͗̔Ŗ̡͕̗͕̜͓̍̋̽ͭ͐̄̎̿͟͢ LÎ̷̷̷̡̪̩̹̻̤̯̟̼̞̗̀͗͗͘F̷̶͇̭͈̀̑̃ͭ̓E̶̢̢̡̮̯̖̺̾̽ͯ̓ͣͥ̆͊͛̄ͥͥ͘͢͡, true)
 	local bruh = workspace.Torment.Main
 
-	local move = GetGitSound("https://github.com/eoyoustme/ohh/blob/main/TormentNew%20(1)%20(1).mp3?raw=true","TormentNew")
+	local move = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.mp3?raw=true","Torment")
 	move.Parent = bruh
 	move.Name = "am"
 	move.Volume = 6
@@ -97,7 +97,7 @@ entity:SetCallback("OnStartMoving", function()
 			local entity = workspace:FindFirstChild("Torment") and workspace.Torment:FindFirstChildWhichIsA("BasePart")
 
 			if hum and hrp and entity then
-				if (hrp.Position - entity.Position).Magnitude <= 40 then
+				if (hrp.Position - entity.Position).Magnitude <= 50 then
 					if hum.Health > 0 then
 						hum.Health = 0
 
