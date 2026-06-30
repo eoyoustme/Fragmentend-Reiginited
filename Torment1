@@ -70,16 +70,16 @@ local entity = Spawner:Create({
 
 entity:SetCallback("OnSpawned", function()
 	print("Entity has spawned")
-	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R̵̵̷̢̞̠̥̮̲̤͍͐̀̈́̈́̃̀͠Ų͉̯̟̬ͬ͒̃̍N Ḟ̶̛͙̩͈̫͙̩̮͓̮̥̜̍͌̊́͐̕͟͠O̵̶̡̞͔̣̩̥͇͂͗͑͐̂͠ͅR Ŷ̴̛̼̜̖̯̯̳̳͚ͬ̂̓͒́ͩͫ̓ͤͥ͘͟O̸̹̖͕̠̭ͣ͌͗͐́̇̊̉̓͘͟͝Ṵ̷_͚̺̬̊͗̔Ŗ̡͕̗͕̜͓̍̋̽ͭ͐̄̎̿͟͢ LÎ̷̷̷̡̪̩̹̻̤̯̟̼̞̗̀͗͗͘F̷̶͇̭͈̀̑̃ͭ̓E̶̢̢̡̮̯̖̺̾̽ͯ̓ͣͥ̆͊͛̄ͥͥ͘͢͡, true)
-	local bruh = workspace.Torment.Main
+	require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("R̆U̘̝̟̬̓̀͗ͪ̿́̉̅ͨ̈̌͑̃͒͌̀͢͞_̨͚̻̫̥̽̈́̄ͩ̓N̸̷̡̨̥̗̝̱̥͙̞̥̥͔̹͎͕̰͓ͫ̏ͨͥ̾̎ͮ͋̏̃̃̅̀̆͐͛͘̚ F̵̧̣̜̟͎̰̘̪͓̠̘̠̹͓̠͙̍ͮ̇ͪ͐́ͨͯ̓ͯ̌̓̄ͩ͊͟ͅO̺̜̓Ŗ̵̷̤͕̲͙̺̹̼̩͉̟̣͎̆͗͆͗̅̃͌͑ͬ̂ Y̸̧̡̖̻̳̫̲̤͍̝̯̠̱̭̰̻̱̌́̐ͤ̇̃ͣͬ̂̅̊͝O͓̺̦͊U̪̕R̰̺͖̫͎̮̭͙͐͗ͭͪ́ͣͨͥ̅͝ L̶̸̰͎̣̭̱̪̺ͦ̄̄ͪͣ̀̿ͯ͝_̙͔͆ͭ̾͜͞ͅI̷͈ͧ́_̧̪̳͉̻̃F͓̯̮̖̞͕̉͌̓͋ͦ́̈́ͯ͟͝ͅ_̶̡͎̥͕̙̼̲̤̔͌͂̍ͨ̃ͯ͑Ě̢͓̗͇̟̤ͧ̒̀̊ͪͥͮͭͭͮ͢_̛͓̺̩̍̔̀̚͜", true)
+		local bruh = workspace.Torment.Main
 
-	local move = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.mp3?raw=true","Torment")
-	move.Parent = bruh
-	move.Name = "am"
-	move.Volume = 6
-	move.Looped = true
-	move.RollOffMaxDistance = 500
-	move.RollOffMinDistance = 300
+		local move = GetGitSound("https://github.com/eoyoustme/Fragmentend-Reiginited/blob/main/Torment.mp3?raw=true","Torment")
+		move.Parent = bruh
+		move.Name = "am"
+		move.Volume = 6
+		move.Looped = true
+		move.RollOffMaxDistance = 500
+		move.RollOffMinDistance = 300
 end)
 
 entity:SetCallback("OnStartMoving", function()
