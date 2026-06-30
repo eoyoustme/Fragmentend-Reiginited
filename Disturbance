@@ -7,6 +7,6 @@ for i = 1, 1 do
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Disturbance-b"))()
 	elseif mode == 2 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/eoyoustme/Fragmentend-Reiginited/refs/heads/main/Disturbance-A"))()
-		end
 	end
+end
 
